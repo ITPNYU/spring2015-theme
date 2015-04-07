@@ -14,9 +14,52 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/**
+ * 3.0 Typography
+ */
 
-.logomark {
-        border: 0;
-	text-decoration: none;
+body,
+button,
+input,
+select,
+textarea {
+        color: #333;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 15px;
+        font-size: 1.5rem;
+        line-height: 1.6;
 }
+
+.post-navigation .post-title {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 1.3333;
+        position: relative;
+        z-index: 2;
+}
+
+.widget_calendar caption {
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        margin: 0 0 1.6em;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+}
+
+.page-title {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 1.3333;
+}
+
+.comments-title,
+.comment-reply-title {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 1.3333;
+}
+
 
