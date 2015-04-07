@@ -1,31 +1,32 @@
 <?php
 /**
  * Template Name: Show Poster
- * The template used for displaying show page content
+ * The template for displaying the show poster page
  *
  */
-?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Post thumbnail.
-		twentyfifteen_post_thumbnail();
-	?>
+get_header(); ?>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
 		<?php
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfifteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+		// Start the loop.
+		while ( have_posts() ) : the_post();
+
+			// Include the page content template.
+			get_template_part( 'content', 'notitle' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		// End the loop.
+		endwhile;
 		?>
-	</div><!-- .entry-content -->
 
-	<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
 
-</article><!-- #post-## -->
+<?php get_footer(); ?>
