@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Show Poster
  * The template used for displaying show page content
  *
  */
